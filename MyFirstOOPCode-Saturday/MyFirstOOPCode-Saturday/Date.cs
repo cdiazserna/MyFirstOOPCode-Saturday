@@ -84,7 +84,7 @@ namespace MyFirstOOPCode_Saturday
 
         public override string ToString()
         {
-            string date = $"{_year}/{_month}/{_day}";
+            string date = $"{_year:0000}/{_month:00}/{_day:00}";
             return date;
         }
 
