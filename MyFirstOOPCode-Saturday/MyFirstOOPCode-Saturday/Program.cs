@@ -10,6 +10,10 @@ namespace MyFirstOOPCode_Saturday
             {
                 var dateObject = new Date(2025, 2, 29);
                 Console.WriteLine(dateObject.ToString());
+
+                Console.WriteLine("");
+
+                Console.WriteLine();
             }
             catch (Exception ex)
             {
