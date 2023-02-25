@@ -15,7 +15,7 @@ namespace MyFirstOOPCode_Saturday
 
         #region Methods
 
-        public decimal GetValueToPay()
+        public override decimal GetValueToPay()
         {
             return base.GetValueToPay() + Base;
         }

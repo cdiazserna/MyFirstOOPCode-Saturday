@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace MyFirstOOPCode_Saturday
@@ -29,7 +33,7 @@ namespace MyFirstOOPCode_Saturday
                     Salary = 1600000.56M
                 };
 
-                Console.WriteLine(salaryEmployee.ToString());
+                //Console.WriteLine(salaryEmployee.ToString());
 
                 Console.WriteLine("");
 
@@ -70,7 +74,7 @@ namespace MyFirstOOPCode_Saturday
                     Sales = sales
                 };
 
-                Console.WriteLine(commissionEmployee.ToString());
+                //Console.WriteLine(commissionEmployee.ToString());
 
                 Console.WriteLine("");
 
@@ -110,7 +114,7 @@ namespace MyFirstOOPCode_Saturday
                     HourValue = hourValue
                 };
 
-                Console.WriteLine(hourlyEmployee.ToString());
+                //Console.WriteLine(hourlyEmployee.ToString());
 
                 Console.WriteLine("");
 
@@ -155,7 +159,57 @@ namespace MyFirstOOPCode_Saturday
                     Base = baseSalary
                 };
 
-                Console.WriteLine(baseCommissionEmployee.ToString());
+                //Console.WriteLine(baseCommissionEmployee.ToString());
+
+                decimal payroll = 0;
+                List<string> names = new List<string>();
+
+                ICollection<Employee> employees = new List<Employee>()
+                {
+                    salaryEmployee,
+                    commissionEmployee,
+                    hourlyEmployee,
+                    baseCommissionEmployee
+                };
+
+                foreach (Employee employee in employees)
+                {
+                    if (employee.IsActive == true)
+                    {
+                        Console.WriteLine(employee);
+                        names.Add(employee.FirstName);
+                        payroll += employee.GetValueToPay();
+                        Console.WriteLine("");
+                    }
+
+                }
+
+                foreach (string name in names)
+                {
+                    Console.WriteLine(name);
+                    Console.WriteLine("");
+                }
+
+                Console.WriteLine(String.Format("Total Payroll:..........{0:C2}", payroll));
+
+                Console.WriteLine("");
+
+                Console.WriteLine("************");
+                Console.WriteLine("* INVOICEE *");
+                Console.WriteLine("************");
+
+                Console.WriteLine("");
+
+                Invoice invoice = new Invoice()
+                {
+                    Id = 102030,
+                    Description = "iPhone 14 Pro Max Plus Super Beta",
+                    Price = 1500M,
+                    Quantity = 2
+                };
+
+                Console.WriteLine(invoice);
+
             }
             catch (Exception ex)
             {
