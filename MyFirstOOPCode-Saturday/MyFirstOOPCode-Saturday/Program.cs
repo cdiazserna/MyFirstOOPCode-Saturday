@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace MyFirstOOPCode_Saturday
 {
@@ -13,7 +14,11 @@ namespace MyFirstOOPCode_Saturday
 
                 Console.WriteLine("");
 
-                Employee salaryEmployeeObject = new SalaryEmployee()
+                Console.WriteLine("*******************");
+                Console.WriteLine("* SALARY EMPLOYEE *");
+                Console.WriteLine("*******************");
+
+                Employee salaryEmployee = new SalaryEmployee()
                 {
                     Id= 104580581,
                     FirstName = "Maria",
@@ -24,7 +29,50 @@ namespace MyFirstOOPCode_Saturday
                     Salary = 1600000.56M
                 };
 
-                Console.WriteLine(salaryEmployeeObject.ToString());
+                Console.WriteLine(salaryEmployee.ToString());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("***********************");
+                Console.WriteLine("* COMMISSION EMPLOYEE *");
+                Console.WriteLine("***********************");
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Type your ID:");
+                int id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Type your first name:");
+                string firstName = Console.ReadLine();
+
+                Console.WriteLine("Type your last name:");
+                string lastName = Console.ReadLine();
+
+                Console.WriteLine("Are you active?");
+                bool isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Type your commission in percentage");
+                float commissionPercentage = Convert.ToSingle(Console.ReadLine());
+                commissionPercentage = commissionPercentage / 100;
+
+                Console.WriteLine("Type your sales");
+                decimal sales = Convert.ToDecimal(Console.ReadLine());
+
+                Employee commissionEmployee = new CommissionEmployee()
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObjectBirthDate,
+                    HiringDate = dateObjectHiringDate,
+                    IsActive = isActive,
+                    CommissionPercentage = commissionPercentage,
+                    Sales = sales
+                };
+
+
+
+                Console.WriteLine(commissionEmployee.ToString());
 
                 Console.WriteLine();
             }
