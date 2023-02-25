@@ -70,9 +70,47 @@ namespace MyFirstOOPCode_Saturday
                     Sales = sales
                 };
 
-
-
                 Console.WriteLine(commissionEmployee.ToString());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("*******************");
+                Console.WriteLine("* HOURLY EMPLOYEE *");
+                Console.WriteLine("*******************");
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Type your ID:");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Type your first name:");
+                firstName = Console.ReadLine();
+
+                Console.WriteLine("Type your last name:");
+                lastName = Console.ReadLine();
+
+                Console.WriteLine("Are you active?");
+                isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Type your number of hours:");
+                float hours = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine("Type your value per hour: ");
+                decimal hourValue = Convert.ToDecimal(Console.ReadLine());
+
+                Employee hourlyEmployee = new HourlyEmployee()
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObjectBirthDate,
+                    HiringDate = dateObjectHiringDate,
+                    IsActive = isActive,
+                    Hours = hours,
+                    HourValue = hourValue
+                };
+
+                Console.WriteLine(hourlyEmployee.ToString());
 
                 Console.WriteLine();
             }
