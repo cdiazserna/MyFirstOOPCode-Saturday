@@ -112,7 +112,50 @@ namespace MyFirstOOPCode_Saturday
 
                 Console.WriteLine(hourlyEmployee.ToString());
 
-                Console.WriteLine();
+                Console.WriteLine("");
+
+                Console.WriteLine("****************************");
+                Console.WriteLine("* BASE COMMISSION EMPLOYEE *");
+                Console.WriteLine("***************************");
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Type your ID:");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Type your first name:");
+                firstName = Console.ReadLine();
+
+                Console.WriteLine("Type your last name:");
+                lastName = Console.ReadLine();
+
+                Console.WriteLine("Are you active?");
+                isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Type your commission in percentage");
+                commissionPercentage = Convert.ToSingle(Console.ReadLine());
+                commissionPercentage = commissionPercentage / 100;
+
+                Console.WriteLine("Type your sales");
+                sales = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine("Type your salary base:");
+                decimal baseSalary = Convert.ToDecimal(Console.ReadLine());
+
+                Employee baseCommissionEmployee = new BaseCommissionEmployee()
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObjectBirthDate,
+                    HiringDate = dateObjectHiringDate,
+                    IsActive = isActive,
+                    CommissionPercentage = commissionPercentage,
+                    Sales = sales,
+                    Base = baseSalary
+                };
+
+                Console.WriteLine(baseCommissionEmployee.ToString());
             }
             catch (Exception ex)
             {
